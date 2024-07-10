@@ -1,4 +1,9 @@
 #!/bin/bash
+# add luci-app-oled
+(cd friendlywrt/package && {
+    [ -d package/luci-app-oled ] && rm -rf package/luci-app-oled
+    git clone https://github.com/tmggg/luci-app-oled.git -b master
+})
 
 # {{ Add luci-app-diskman
 (cd friendlywrt && {
@@ -6,8 +11,8 @@
     wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/applications/luci-app-diskman/Makefile -O package/luci-app-diskman/Makefile
     mkdir -p package/parted
     wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/parted/Makefile
-    mkdir -p package/luci-app-oled
-    wget https://raw.githubusercontent.com/tmggg/luci-app-oled/master/luci-app-oled/Makefile -O package/luci-app-oled/Makefile
+#    mkdir -p package/luci-app-oled
+ #   wget https://raw.githubusercontent.com/tmggg/luci-app-oled/master/luci-app-oled/Makefile -O package/luci-app-oled/Makefile
 })
 cat >> configs/rockchip/01-nanopi <<EOL
 CONFIG_PACKAGE_luci-app-diskman=y
