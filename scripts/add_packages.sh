@@ -11,6 +11,7 @@ CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs=y
 CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
 CONFIG_PACKAGE_luci-i18n-diskman-zh-cn=y
 CONFIG_PACKAGE_smartmontools=y
+CONFIG_PACKAGE_luci-app-homeproxy=y
 EOL
 # }}
 
